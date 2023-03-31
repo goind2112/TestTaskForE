@@ -87,7 +87,9 @@ enum R {
             static let furniture = UIImage(named:"furniture")!
             static let kids = UIImage(named:"kids")!
             static let magnifier = UIImage(named:"magnifier")!
-            static let arrayTagImage = [phones,headphones,games,cars,furniture,kids]
+            static let arrayTagImageLeft = [phones,headphones]
+            static let arrayTagImageCenter = [games,cars]
+            static let arrayTagImageRight = [furniture,kids]
         }
         
         enum Page2 {
@@ -147,7 +149,9 @@ enum R {
             static let latest = "Latest deals"
             static let flashSale = "Flash Sale"
             static let brands = "Brands"
-            static let arrayTagText = [phones,headphones,games,cars,furniture,kids]
+            static let arrayTagTextLeft = [phones,headphones]
+            static let arrayTagTextCenter = [games,cars]
+            static let arrayTagTextRight = [furniture,kids]
         }
         
         enum Page2 {

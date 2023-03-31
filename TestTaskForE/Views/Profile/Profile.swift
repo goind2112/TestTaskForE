@@ -7,6 +7,8 @@
 
 import SwiftUI
 import RealmSwift
+import Photos
+import _PhotosUI_SwiftUI
 
 struct Profile: View {
     
@@ -17,6 +19,9 @@ struct Profile: View {
     
     @ObservedObject private var profileVM = ProfileVM()
     @EnvironmentObject private var rootCoordinator: RootCoordinator
+    @State private var image: UIImage?
+    
+    let readWriteStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -31,8 +36,10 @@ struct Profile: View {
                                 .stroke(R.Colors.Profile.border, lineWidth: 1)
                         }
                         .padding(.bottom, 8)
+                    
                     Button {
-                        rootCoordinator.isPresentedSheet.toggle()
+                        profileVM.checkIsAuthorized()
+                        rootCoordinator.show(isPresented: !profileVM.isPresented, alertText: "To change your profile picture, go to Settings -> TestTaskForE -> Photos -> select All Photos")
                     } label: {
                         Text(R.Strings.Profile.changePhoto)
                             .font(R.Fonts.montserrat(with: 8))
@@ -68,76 +75,8 @@ struct Profile: View {
                 }
                 .background(R.Colors.background)
                 
-                ScrollView(showsIndicators: false){
-                    VStack(spacing: 25) {
-                        Button {
-                            
-                            print(Thread.current)
-                        } label: {
-                            profileButtonLabel(first: R.Images.Profile.card,
-                                               firstText: R.Strings.Profile.tradeStore,
-                                               last: R.Images.Profile.rightArrow)
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            profileButtonLabel(first: R.Images.Profile.card,
-                                               firstText: R.Strings.Profile.paymentMethod,
-                                               last: R.Images.Profile.rightArrow)
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            profileButtonLabel(first: R.Images.Profile.card,
-                                               firstText: R.Strings.Profile.balance,
-                                               lastText: profileVM.balanse)
-                        }
-                    }
-                    .padding(.top, 13)
-                    .padding(.leading, 32)
-                    .padding(.trailing, 45)
-                    .padding(.bottom, 25)
-                    
-                    VStack(spacing: 20) {
-                        Button {
-                            
-                        } label: {
-                            profileButtonLabel(first: R.Images.Profile.card,
-                                               firstText: R.Strings.Profile.tradeHistory,
-                                               last: R.Images.Profile.rightArrow)
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            profileButtonLabel(first: R.Images.Profile.restore,
-                                               firstText: R.Strings.Profile.restorePurchase,
-                                               last: R.Images.Profile.rightArrow)
-                        }
-                        
-                        Button {
-                            
-                        } label: {
-                            profileButtonLabel(first: R.Images.Profile.help,
-                                               firstText: R.Strings.Profile.help)
-                        }
-                        Button {
-                            profileVM.logOut()
-                            // Encountered a bug: the view moved down when returning to the root view, so we first clear the NavigationPath, and then go to the root view
-                            rootCoordinator.backToRoot()
-                            rootCoordinator.show(screen: .signIn)
-                        } label: {
-                            profileButtonLabel(first: R.Images.Profile.logOut,
-                                               firstText: R.Strings.Profile.logOut)
-                        }
-                        .padding(.bottom, 63)
-                    }
-                    .padding(.leading, 28)
-                    .padding(.trailing, 47)
-                }
-                .background(R.Colors.background)
+                SettingsAndInformation(profileVM: profileVM)
+                    .background(R.Colors.background)
                 Spacer()
             }
             .onAppear(perform: { profileVM.updateProfileImage() })
@@ -156,37 +95,10 @@ struct Profile: View {
                 }
             }
         }
+        .photosPicker(isPresented: $profileVM.isPresented, selection: $profileVM.imageSelection, maxSelectionCount: 1, matching: .images)
     }
 }
 
-extension Profile {
-    private func profileButtonLabel(first: UIImage, firstText: String, last: UIImage? = nil, lastText: String? = nil) -> some View {
-        HStack(spacing: 0) {
-            Image(uiImage: first)
-                .resizable()
-                .frame(width: 40, height: 40.9)
-                .padding(.trailing, 7.8)
-            Text(firstText)
-                .font(R.Fonts.montserrat(with: 10,.medium))
-                .foregroundColor(R.Colors.textBlack)
-                .padding(.bottom, 13)
-                .padding(.top, 18)
-            Spacer()
-            
-            if let lastImage = last {
-                Image(uiImage: lastImage)
-                    .resizable()
-                    .frame(width: 5.5, height: 10.15)
-            }
-            
-            if let lastText = lastText {
-                Text(lastText)
-                    .font(R.Fonts.montserrat(with: 10,.medium))
-                    .foregroundColor(R.Colors.textBlack)
-            }
-        }
-    }
-}
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
         Profile()

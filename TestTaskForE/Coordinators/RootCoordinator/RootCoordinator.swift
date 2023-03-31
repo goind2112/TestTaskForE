@@ -7,16 +7,9 @@
 
 import SwiftUI
 
-
-
 enum Screens: Hashable {
     case login, signIn, tabBar(tab: TabBarItemModel)
 }
-
-enum Sheet {
-    case imagePicker
-}
-
 
 final class RootCoordinator: ObservableObject {
     static let shared = RootCoordinator()
@@ -28,7 +21,6 @@ final class RootCoordinator: ObservableObject {
     @Published var isPresented: Bool = false
     @Published var alertText: String = ""
     
-    @Published var cheet: Sheet?
     @Published var isPresentedSheet: Bool = false
     
     private var tabBarCoordinator = TabBarCoordinator.shared
@@ -67,14 +59,6 @@ final class RootCoordinator: ObservableObject {
             TabBarCoordinatorView(coordinator: tabBarCoordinator, selection: .chat)
         case .tabBar(tab: .tabProfile):
             TabBarCoordinatorView(coordinator: tabBarCoordinator, selection: .tabProfile)
-        }
-    }
-    
-    @ViewBuilder
-    func build(sheet: Sheet) -> some View {
-        switch sheet {
-        case .imagePicker:
-            ImagePicker()
         }
     }
 }

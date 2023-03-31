@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct TestTaskForEApp: App {
-   
+    
     var body: some Scene {
         WindowGroup {
             RootCoordinatorView()
         }
     }
 }
+

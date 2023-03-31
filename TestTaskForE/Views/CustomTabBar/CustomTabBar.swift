@@ -37,27 +37,135 @@ struct CustomTabBar: View {
 extension CustomTabBar {
     func tabItem(tab: TabBarItemModel) -> some View {
         VStack(spacing: 0) {
-            if selection == tab {
-                Image(uiImage: tab.image)
-                    .renderingMode(.template)
-                    .resizable()
-                    .foregroundColor(R.Colors.TabBar.button)
-                    .frame(width: 15, height: 15)
-                    .frame(width: 40, height: 40)
-                    .background{
-                        Circle()
-                            .foregroundColor(R.Colors.CellElements.button)
+            switch tab {
+            case .home:
+                VStack(spacing: 0) {
+                    if selection == tab {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                            .background{
+                                Circle()
+                                    .foregroundColor(R.Colors.CellElements.button)
+                            }
+                    } else {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
                     }
-            } else {
-                Image(uiImage: tab.image)
-                    .renderingMode(.template)
-                    .resizable()
-                    .foregroundColor(R.Colors.TabBar.button)
-                    .frame(width: 15, height: 15)
-                    .frame(width: 40, height: 40)
+                }
+                .padding(.leading, 17)
+                .padding(.top, 13)
+                .padding(.bottom, 10)
+            case .heart:
+                VStack(spacing: 0) {
+                    if selection == tab {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                            .background{
+                                Circle()
+                                    .foregroundColor(R.Colors.CellElements.button)
+                            }
+                    } else {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                    }
+                }
+                .padding(.leading, 31)
+                .padding(.top, 13)
+                .padding(.bottom, 10)
+            case .shoppingСart:
+                VStack(spacing: 0) {
+                    if selection == tab {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                            .background{
+                                Circle()
+                                    .foregroundColor(R.Colors.CellElements.button)
+                            }
+                    } else {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                    }
+                }
+                .padding(.leading, 33.6)
+                .padding(.top, 12)
+                .padding(.bottom, 11)
+            case .chat:
+                VStack(spacing: 0) {
+                    if selection == tab {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                            .background{
+                                Circle()
+                                    .foregroundColor(R.Colors.CellElements.button)
+                            }
+                    } else {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                    }
+                }
+                .padding(.leading, 35.9)
+                .padding(.top, 13)
+                .padding(.bottom, 10)
+            case .tabProfile:
+                VStack(spacing: 0) {
+                    if selection == tab {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                            .background{
+                                Circle()
+                                    .foregroundColor(R.Colors.CellElements.button)
+                            }
+                    } else {
+                        Image(uiImage: tab.image)
+                            .renderingMode(.template)
+                            .resizable()
+                            .foregroundColor(R.Colors.TabBar.button)
+                            .frame(width: 15, height: 15)
+                            .frame(width: 40, height: 40)
+                    }
+                }
+                .padding(.leading, 30.2)
+                .padding(.top, 13)
+                .padding(.bottom, 10)
+                .padding(.trailing, 11)
             }
         }
-        .padding(.horizontal, 12)
     }
     
     private func switchToTab (tab: TabBarItemModel) {

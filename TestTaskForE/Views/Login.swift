@@ -113,6 +113,16 @@ struct Login: View {
             
             Spacer()
         }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                HStack {
+                    Button("Hide") {
+                        focusedField = nil
+                    }
+                    Spacer()
+                }
+            }
+        }
         .onReceive(Publishers.keyboardHeight) { self.keyboardHeight = $0 }
         .background(R.Colors.background)
     }

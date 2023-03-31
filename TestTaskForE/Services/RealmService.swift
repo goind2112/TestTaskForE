@@ -7,13 +7,12 @@
 
 import RealmSwift
 import SwiftUI
-import Combine
 
 final class RealmService: ObservableObject {
     static let shared = RealmService()
     private(set) var localRealm: Realm?
+    @ObservedObject private var userModel = UserModel.shared
     @Published private(set) var userArray: [UserModel] = []
-    @Published private(set) var currentUser: UserModel?
     
     private init () {
         openRealm()
@@ -38,7 +37,7 @@ final class RealmService: ObservableObject {
             do {
                 try localRealm.write {
                     let newUser = user
-                    currentUser = newUser
+                    userModel.currentUser = newUser
                     localRealm.add(newUser)
                     getUsers()
                     print("Added new user: \(newUser)")
@@ -64,30 +63,25 @@ final class RealmService: ObservableObject {
             let allUsers = localRealm.objects(UserModel.self)
             allUsers.forEach { user in
                 if currentUserModel.id == user.id {
-                    currentUser = user
+                    userModel.currentUser = user
+                    userModel.currentUserImage = userModel.currentUser?.image
                 }
             }
         }
     }
     
-    func willСhange(image: UIImage) {
+    func willСhange(image: Data) {
         if let localRealm = localRealm {
-            guard let currentUser = currentUser else { return }
+            guard let currentUser = userModel.currentUser else { return }
             let currentUserId = currentUser.id
             do{
                 let currentUser = localRealm.objects(UserModel.self).filter(NSPredicate(format: "id == %@", currentUserId))
                 guard !currentUser.isEmpty else { return }
                 
                 try localRealm.write({
-                    var dataImage = Data()
-                    if let data = image.jpegData(compressionQuality: 0.9) {
-                        dataImage = data
-                    } else if let data = image.heic() {
-                        dataImage = data
-                    } else if let data = image.pngData() {
-                        dataImage = data
-                    }
+                    let dataImage = image
                     currentUser[0].image = dataImage
+                    userModel.currentUserImage = dataImage
                 })
             } catch {
                 print("Error updating task \(currentUserId) to Realm: \(error)")
@@ -96,6 +90,7 @@ final class RealmService: ObservableObject {
     }
     
     func logOut() {
-        currentUser = nil
+        userModel.currentUser = nil
+        userModel.currentUserImage = nil
     }
 }

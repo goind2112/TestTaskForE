@@ -17,11 +17,6 @@ struct Page1: View {
     
     @ObservedObject private var page1VM = Page1VM()
     
-    init() {
-        print("init Page1View")
-    }
-    
-    let names = ["Holly", "Josh", "Rhonda", "Ted"]
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -44,7 +39,7 @@ struct Page1: View {
                     }
                     .padding(.bottom, 10)
                     
-                    ZStack {
+                    ZStack() {
                         TextField("", text: $search)
                             .textFieldModifire()
                             .textInputAutocapitalization(.never)
@@ -71,28 +66,7 @@ struct Page1: View {
                     .padding(.horizontal, 57)
                     .padding(.bottom, 17)
                     
-                    ScrollView(.horizontal ,showsIndicators: false) {
-                        HStack(spacing: 19) {
-                            ForEach(0..<R.Images.Page1.arrayTagImage.count, id: \.self) {index in
-                                Button {
-                                    print(index)
-                                } label: {
-                                    VStack(spacing: 0) {
-                                        Image(uiImage: R.Images.Page1.arrayTagImage[index])
-                                            .resizable()
-                                            .frame(width: 42, height: 38)
-                                        Text(R.Strings.Page1.arrayTagText[index])
-                                            .padding(.top, 14)
-                                            .font(R.Fonts.montserrat(with: 7))
-                                            .foregroundColor(R.Colors.textPlaceholder)
-                                    }
-                                }
-                                
-                            }
-                        }
-                        .padding(.horizontal, 15)
-                        .padding(.bottom, 23)
-                    }
+                    TagScrollView()
                 }
                 .background(R.Colors.background)
                 
@@ -116,6 +90,15 @@ struct Page1: View {
                 Spacer()
             }
             .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    HStack {
+                        Button("Hide") {
+                            focusedField = nil
+                        }
+                        Spacer()
+                    }
+                }
+                
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         print("work")
@@ -131,13 +114,13 @@ struct Page1: View {
                             .font(R.Fonts.montserrat(with: 18,.bold))
                             .lineLimit(1)
                             .frame(width: 84)
-                            .padding(.leading, 60)
+                            .padding(.leading, 65.21)
                         Text(R.Strings.Page1.titleSecondElement)
                             .font(R.Fonts.montserrat(with: 18, .bold))
                             .foregroundColor(R.Colors.buttonViolet)
                             .frame(width: 43)
                             .lineLimit(1)
-                            .padding(.trailing, 50)
+                            .padding(.trailing, 56)
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {

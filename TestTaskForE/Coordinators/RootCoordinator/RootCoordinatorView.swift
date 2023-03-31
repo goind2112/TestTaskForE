@@ -20,9 +20,6 @@ struct RootCoordinatorView: View {
                 .alert(coordinator.alertText, isPresented: $coordinator.isPresented) {
                     Button("Ok", role: .cancel) {}
                 }
-                .sheet(isPresented: $coordinator.isPresentedSheet) {
-                    coordinator.build(sheet: .imagePicker)
-                }
         }
         .environmentObject(coordinator)
     }

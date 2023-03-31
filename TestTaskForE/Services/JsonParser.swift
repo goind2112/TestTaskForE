@@ -33,7 +33,7 @@ final class JsonParser: ObservableObject {
         
         for stringURL in stringsURL {
             guard let url = URL(string: stringURL) else { return }
-    
+            
             do {
                 let (data, _) = try await URLSession.shared.data(from: url)
                 let produkts = try! JSONDecoder()

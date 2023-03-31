@@ -16,7 +16,6 @@
 		E816BD6F29BF03F30003353C /* Notification + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816BD6E29BF03F30003353C /* Notification + Ex.swift */; };
 		E816BD7829BF3D5A0003353C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816BD7729BF3D5A0003353C /* Profile.swift */; };
 		E821E23129C3D57500DB0FF1 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821E23029C3D57500DB0FF1 /* LoginVM.swift */; };
-		E821E23329C3DF2F00DB0FF1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821E23229C3DF2F00DB0FF1 /* ImagePicker.swift */; };
 		E821E23629C3E1CD00DB0FF1 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821E23529C3E1CD00DB0FF1 /* ProfileVM.swift */; };
 		E821E23929C5D65C00DB0FF1 /* UIImage + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821E23829C5D65C00DB0FF1 /* UIImage + Ex.swift */; };
 		E821E23C29C5F2A700DB0FF1 /* Page1VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821E23B29C5F2A700DB0FF1 /* Page1VM.swift */; };
@@ -47,6 +46,9 @@
 		E86A2C0D29C7D67400C69AEB /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A2C0C29C7D67400C69AEB /* JsonParser.swift */; };
 		E86A2C1229C7E75600C69AEB /* JsonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86A2C1129C7E75600C69AEB /* JsonModels.swift */; };
 		E86A2C1829C9CB2100C69AEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E86A2C1729C9CB2100C69AEB /* Assets.xcassets */; };
+		E89F93C529D7099500B1CD48 /* AlternativeSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F93C429D7099500B1CD48 /* AlternativeSignInButton.swift */; };
+		E89F93C829D725B800B1CD48 /* SettingsAndInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F93C729D725B800B1CD48 /* SettingsAndInformation.swift */; };
+		E89F93CB29D73A2100B1CD48 /* TagScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F93CA29D73A2100B1CD48 /* TagScrollView.swift */; };
 		E8FB7B3829C0279D00AB65D4 /* CellProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB7B3729C0279D00AB65D4 /* CellProduct.swift */; };
 		E8FB7B3C29C03B2100AB65D4 /* Page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB7B3B29C03B2100AB65D4 /* Page1.swift */; };
 		E8FB7B4029C0F06400AB65D4 /* LazyHGridPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB7B3F29C0F06400AB65D4 /* LazyHGridPage1.swift */; };
@@ -62,7 +64,6 @@
 		E816BD6E29BF03F30003353C /* Notification + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification + Ex.swift"; sourceTree = "<group>"; };
 		E816BD7729BF3D5A0003353C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E821E23029C3D57500DB0FF1 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
-		E821E23229C3DF2F00DB0FF1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E821E23529C3E1CD00DB0FF1 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		E821E23829C5D65C00DB0FF1 /* UIImage + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Ex.swift"; sourceTree = "<group>"; };
 		E821E23B29C5F2A700DB0FF1 /* Page1VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1VM.swift; sourceTree = "<group>"; };
@@ -93,6 +94,9 @@
 		E86A2C0C29C7D67400C69AEB /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		E86A2C1129C7E75600C69AEB /* JsonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModels.swift; sourceTree = "<group>"; };
 		E86A2C1729C9CB2100C69AEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E89F93C429D7099500B1CD48 /* AlternativeSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeSignInButton.swift; sourceTree = "<group>"; };
+		E89F93C729D725B800B1CD48 /* SettingsAndInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAndInformation.swift; sourceTree = "<group>"; };
+		E89F93CA29D73A2100B1CD48 /* TagScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagScrollView.swift; sourceTree = "<group>"; };
 		E8FB7B3729C0279D00AB65D4 /* CellProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProduct.swift; sourceTree = "<group>"; };
 		E8FB7B3B29C03B2100AB65D4 /* Page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1.swift; sourceTree = "<group>"; };
 		E8FB7B3F29C0F06400AB65D4 /* LazyHGridPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyHGridPage1.swift; sourceTree = "<group>"; };
@@ -125,9 +129,9 @@
 			children = (
 				E85FE65D29C1649800F64B47 /* CustomTabBar */,
 				E85FE64F29C14CC300F64B47 /* EmptyView */,
-				E844C7D029BE7FBF002C2373 /* SignIn.swift */,
+				E89F93BF29D6FC9E00B1CD48 /* SignIn */,
 				E816BD6A29BEFA540003353C /* Login.swift */,
-				E821E23729C3F87600DB0FF1 /* Profile */,
+				E89F93C629D7252C00B1CD48 /* Profile */,
 				E86A2C0E29C7DCB700C69AEB /* Page1 */,
 			);
 			path = Views;
@@ -138,17 +142,9 @@
 			children = (
 				E8FB7B3729C0279D00AB65D4 /* CellProduct.swift */,
 				E8FB7B3F29C0F06400AB65D4 /* LazyHGridPage1.swift */,
+				E89F93CA29D73A2100B1CD48 /* TagScrollView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		E821E23729C3F87600DB0FF1 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				E816BD7729BF3D5A0003353C /* Profile.swift */,
-				E821E23229C3DF2F00DB0FF1 /* ImagePicker.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		E844C7C229BE7FBF002C2373 = {
@@ -304,6 +300,32 @@
 			path = Page1;
 			sourceTree = "<group>";
 		};
+		E89F93BF29D6FC9E00B1CD48 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				E844C7D029BE7FBF002C2373 /* SignIn.swift */,
+				E89F93C429D7099500B1CD48 /* AlternativeSignInButton.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		E89F93C629D7252C00B1CD48 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E816BD7729BF3D5A0003353C /* Profile.swift */,
+				E89F93C929D7273D00B1CD48 /* Components */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E89F93C929D7273D00B1CD48 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E89F93C729D725B800B1CD48 /* SettingsAndInformation.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,11 +426,12 @@
 				E80D708629C10E6000AC55D0 /* CustomTabBar.swift in Sources */,
 				E86A2C0B29C7CE6A00C69AEB /* Product.swift in Sources */,
 				E85FE65F29C164BD00F64B47 /* CustomTabBarContainer.swift in Sources */,
-				E821E23329C3DF2F00DB0FF1 /* ImagePicker.swift in Sources */,
 				E85FE65529C14D5400F64B47 /* Chat.swift in Sources */,
 				E85FE68229C2D95700F64B47 /* UserModel.swift in Sources */,
+				E89F93CB29D73A2100B1CD48 /* TagScrollView.swift in Sources */,
 				E85FE66129C1688C00F64B47 /* TabBarItemsPreferenceKey.swift in Sources */,
 				E816BD7829BF3D5A0003353C /* Profile.swift in Sources */,
+				E89F93C529D7099500B1CD48 /* AlternativeSignInButton.swift in Sources */,
 				E86A2C0D29C7D67400C69AEB /* JsonParser.swift in Sources */,
 				E85FE65329C14D4200F64B47 /* ShoppingСart.swift in Sources */,
 				E85FE68029C2D8CC00F64B47 /* RealmService.swift in Sources */,
@@ -418,6 +441,7 @@
 				E86A2C1229C7E75600C69AEB /* JsonModels.swift in Sources */,
 				E85FE65C29C1568A00F64B47 /* TabBarItemModel.swift in Sources */,
 				E844C7CF29BE7FBF002C2373 /* TestTaskForEApp.swift in Sources */,
+				E89F93C829D725B800B1CD48 /* SettingsAndInformation.swift in Sources */,
 				E8FB7B3C29C03B2100AB65D4 /* Page1.swift in Sources */,
 				E85FE67929C2D51900F64B47 /* SignInVM.swift in Sources */,
 			);

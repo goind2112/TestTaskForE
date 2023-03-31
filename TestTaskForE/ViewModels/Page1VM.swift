@@ -9,11 +9,13 @@ import SwiftUI
 import RealmSwift
 import Combine
 
+
 final class Page1VM: ObservableObject {
     
     // input
     @ObservedObject private var realmService = RealmService.shared
     @ObservedObject private var jsonParser = JsonParser.shared
+    @ObservedObject private var userModel = UserModel.shared
     
     // output
     @Published var profileImage: UIImage = R.Images.Profile.profile
@@ -21,13 +23,12 @@ final class Page1VM: ObservableObject {
     
     private var cancellableSet: Set<AnyCancellable> = []
     
-    //to do: почени profileImage
     init() {
-        realmService.$currentUser
+        userModel.$currentUserImage
             .receive(on: RunLoop.main)
-            .map { user in
-                guard let user = user else { return R.Images.Profile.profile }
-                guard let image = UIImage(data: user.image) else { return R.Images.Profile.profile }
+            .map { data in
+                guard let data = data else { return R.Images.Profile.profile }
+                guard let image = UIImage(data: data) else { return R.Images.Profile.profile }
                 return image
             }
             .assign(to: \.profileImage, on: self)
@@ -43,6 +44,7 @@ final class Page1VM: ObservableObject {
             .store(in: &cancellableSet)
     }
     
+    
     private func initProducts(_ jsonModels: [JsonModel], images: [UIImage]) -> [Product] {
         var products = [Product]()
         for index in 0..<jsonModels.count {
@@ -54,10 +56,10 @@ final class Page1VM: ObservableObject {
             }
             
             products.append(Product(category: jsonModels[index].category,
-                                     name: jsonModels[index].name,
-                                     price: price,
-                                     discount: discount,
-                                     image: images[index]))
+                                    name: jsonModels[index].name,
+                                    price: price,
+                                    discount: discount,
+                                    image: images[index]))
         }
         return products
     }
